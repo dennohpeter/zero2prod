@@ -17,6 +17,8 @@ name = "zero2prod"
 actix-web = "4.2.1"
 config = "0.13.2"
 serde = {version = "1.0.147", features = ["derive"]}
+uuid = { version = "0.8.2", features = [ "v4"] }
+chrono = "0.4.23"
 
 [dependencies.sqlx]
 version = "0.5.10"
