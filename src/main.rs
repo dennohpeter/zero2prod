@@ -2,6 +2,7 @@
 
 use std::net::TcpListener;
 
+use secrecy::ExposeSecret;
 use sqlx::PgPool;
 use zero2prod::{
     settings::DatabaseSettings,
@@ -11,7 +12,7 @@ use zero2prod::{
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    let subscriber = get_subscriber("zero2prod".into(), "info".into());
+    let subscriber = get_subscriber("zero2prod".into(), "info".into(), std::io::stdout);
     init_subscriber(subscriber);
 
     let config = zero2prod::settings::get_configuration().expect("Failed to read configuration.");
@@ -19,7 +20,8 @@ async fn main() -> std::io::Result<()> {
         &config
             .get::<DatabaseSettings>("database")
             .unwrap()
-            .connection_string(),
+            .connection_string()
+            .expose_secret(),
     )
     .await
     .expect("Failed to connect to Postgres.");
