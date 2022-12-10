@@ -1,5 +1,7 @@
-# Configuration YAML
-application_port: 8000
+#! configuration/base.yml
+application:
+  port: 8000
+  host: 127.0.0.1
 database:
   host: "127.0.0.1"
   port: 5432
