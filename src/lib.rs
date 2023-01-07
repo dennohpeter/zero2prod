@@ -1,5 +1,6 @@
 //! lib.rs
 
+pub mod domain;
 pub mod handlers;
 pub mod settings;
 pub mod startup;
