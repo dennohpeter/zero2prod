@@ -28,6 +28,8 @@ tracing-actix-web = "0.6.2"
 serde-aux = "4.1.2"
 unicode-segmentation = "1.10.0"
 validator = "0.16.0"
+reqwest = {version = "0.11.13", default_features = false, features = ["json", "rustls-tls"]}
+
 
 [dependencies.sqlx]
 version = "0.5.10"
@@ -47,5 +49,4 @@ once_cell = "1.16.0"
 quickcheck = "1.0.3"
 quickcheck_macros = "1.0.0"
 rand = "0.8.5"
-reqwest = "0.11.13"
 tokio = {version = "1", features = ["macros", "rt-multi-thread"]}
