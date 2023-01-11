@@ -13,3 +13,4 @@ database:
 email_client:
   base_url: "https://api.postmarkapp.com"
   sender_email: "mail@dennohpeter.com"
+  authorization_token: "3bc125f1-0380-42b8-aa5d-57112396b09f"
